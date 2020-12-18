@@ -1,5 +1,5 @@
 # dnn-compression
-This is my B.S final project. An implementation of deep compression covering magnitude weight pruning and also weight sharing.
+This is a project I plan to use for my B.S final project. An implementation of deep compression covering magnitude weight pruning and also weight sharing.
 
 This repo use [distiller](https://github.com/IntelLabs/distiller) and also [synxlin/nn-compression](https://github.com/synxlin/nn-compression) as the reference. However the code in this repo haven't fully tested so it may raise some error or takes a lot time to execute.
 
@@ -31,6 +31,8 @@ senscan.sensitivities_to_csv(sensitivities, path)
 ```
 <center><img src="imgs/alexnet_elementwise.png"></center>
 
+You can see this [notebook](https://colab.research.google.com/drive/12i4icwA9AIfcLjdmCgnjG6Gol9kgAI_h?usp=sharing) for the sensitivity analysis experiment.
+
 pruner usage
 
 ```python
@@ -60,6 +62,7 @@ for inputs, labels in dataloaders:
   pruner.prune(model=model, update_masks=False)
 ...
 ```
+You can see this [notebook](https://colab.research.google.com/drive/1sFAj8PZCikWweTk4BJQp3Or4NH_XbkLc?usp=sharing) for the pruning implementation
 
 ## Quantization/Weight sharing
 In this repo K-Means clustering used to calculate the centroids
@@ -109,7 +112,7 @@ with torch.no_grad():
   
 ```
 
-You may consider to re-train and re-quantize the model to get better accuracy
+You may consider to re-train and re-quantize the model to get better accuracy. You can also see this [notebook](https://colab.research.google.com/drive/1y1C4bqH0q2KG_2xLeIPqbnItb0QUe-sB?usp=sharing) for the Quantization experiment.
 
 ## Rerference
 
